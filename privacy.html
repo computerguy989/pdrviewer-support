@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDR Viewer Privacy Policy</title>
+<style>
+  :root {
+    --bg: #eef1f0;
+    --surface: #e3e8e6;
+    --surface-2: #dbe1de;
+    --ink: #1b1f22;
+    --ink-muted: #565f5c;
+    --accent: #b8571f;
+    --accent-2: #8a4116;
+    --line: #c9d0cd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171a;
+      --surface: #1b1f22;
+      --surface-2: #21262a;
+      --ink: #edf1ee;
+      --ink-muted: #9aa39e;
+      --accent: #e08a4a;
+      --accent-2: #f0a565;
+      --line: #2c3235;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171a;
+    --surface: #1b1f22;
+    --surface-2: #21262a;
+    --ink: #edf1ee;
+    --ink-muted: #9aa39e;
+    --accent: #e08a4a;
+    --accent-2: #f0a565;
+    --line: #2c3235;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+  .mono {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1, h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  h1 {
+    font-size: 2.1rem;
+    letter-spacing: -0.01em;
+    margin: 0.4rem 0 0;
+  }
+  h2 {
+    font-size: 1.15rem;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  h2 .num {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  p { margin: 0 0 1rem; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+  .muted { color: var(--ink-muted); }
+  a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* header data-plate */
+  .plate {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.75rem;
+  }
+  .plate-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .plate-item .label {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block;
+  }
+  .plate-item .value {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-top: 0.15rem;
+  }
+
+  .rule {
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent 55%);
+    margin: 2.5rem 0;
+    border: none;
+  }
+
+  /* table of contents */
+  .toc {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .toc li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem;
+  }
+  .toc .num {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--accent);
+    font-size: 0.8rem;
+    min-width: 1.4rem;
+  }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--accent-2); }
+
+  section {
+    margin: 2.5rem 0;
+    scroll-margin-top: 1.5rem;
+  }
+
+  /* spec table used for the AI-provider breakdown */
+  .spec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1.25rem 0 1.5rem;
+    background: var(--surface);
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+  }
+  .spec-row + .spec-row { border-top: 1px solid var(--line); }
+  .spec-row .k {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    padding-top: 0.15rem;
+  }
+  .spec-row .v { font-size: 0.95rem; color: var(--ink); }
+  .spec-row .v p { margin: 0; }
+
+  ul.plain { margin: 0.75rem 0 1rem; padding-left: 1.2rem; }
+  ul.plain li { margin-bottom: 0.4rem; }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 30rem) {
+    .spec-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">Privacy Policy</div>
+  <h1>PDR Viewer</h1>
+
+  <div class="plate">
+    <p class="muted" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-size: 0.95rem;">
+      PDR Viewer is a Mac and iPad app for reviewing GM Performance Data Recorder telemetry from track days &mdash; lap comparison, video sync, vehicle stats, and an optional AI-generated coaching summary. See also the <a href="terms.html">Terms &amp; Disclaimer</a>, which covers the AI Coaching feature specifically.
+    </p>
+    <div class="plate-row">
+      <div class="plate-item">
+        <span class="label">Effective</span>
+        <span class="value">2026-08-17</span>
+      </div>
+      <div class="plate-item">
+        <span class="label">Applies to</span>
+        <span class="value">PDR Viewer &mdash; macOS &amp; iPadOS</span>
+      </div>
+      <div class="plate-item">
+        <span class="label">Contact</span>
+        <span class="value"><a href="mailto:computerguy989@gmail.com">computerguy989@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <ol class="toc">
+    <li><span class="num">01</span><a href="#overview">Overview</a></li>
+    <li><span class="num">02</span><a href="#files">The telemetry files you open</a></li>
+    <li><span class="num">03</span><a href="#coaching">The optional AI coaching feature</a></li>
+    <li><span class="num">04</span><a href="#keys">API keys and credentials</a></li>
+    <li><span class="num">05</span><a href="#prefs">App preferences and local storage</a></li>
+    <li><span class="num">06</span><a href="#not">What this app doesn&rsquo;t do</a></li>
+    <li><span class="num">07</span><a href="#third-party">Third-party services</a></li>
+    <li><span class="num">08</span><a href="#children">Children&rsquo;s privacy</a></li>
+    <li><span class="num">09</span><a href="#changes">Changes to this policy</a></li>
+    <li><span class="num">10</span><a href="#contact">Contact</a></li>
+  </ol>
+
+  <section id="overview">
+    <h2><span class="num">01</span> Overview</h2>
+    <p>PDR Viewer is built to run entirely on your own device. It doesn&rsquo;t have a server, doesn&rsquo;t ask you to create an account, and doesn&rsquo;t collect analytics, usage statistics, advertising identifiers, or crash reports of any kind. Almost everything the app does &mdash; decoding telemetry, building lap comparisons, syncing video, computing stats &mdash; happens locally on your Mac or iPad and never leaves it.</p>
+    <p>The one feature that can send data off your device is the optional AI coaching summary, and even that only runs if you turn it on and provide your own API key. The sections below explain exactly what that involves.</p>
+  </section>
+
+  <section id="files">
+    <h2><span class="num">02</span> The telemetry files you open</h2>
+    <p>When you open a track map file or a session recording, PDR Viewer reads and decodes it on your device to build lap comparisons, charts, and stats. This includes GPS coordinates, speed, and other channels recorded by your Performance Data Recorder, along with the video itself.</p>
+    <p>None of this is uploaded, transmitted, or shared by the app. It stays in the files you chose and in the app&rsquo;s own local data on your device (for example, remembering the last few track/session combinations you&rsquo;ve built, so you can reopen them without re-picking files).</p>
+  </section>
+
+  <section id="coaching">
+    <h2><span class="num">03</span> The optional AI coaching feature</h2>
+    <p>If you turn on AI coaching, PDR Viewer sends a compact, derived summary of your lap analysis &mdash; lap times, corner names, speeds, and similar performance numbers &mdash; to a provider you choose, so it can write a short coaching narrative back. This summary never includes raw video, GPS coordinates, or file names. Where that summary goes depends on which provider you pick:</p>
+    <div class="spec">
+      <div class="spec-row">
+        <div class="k">CLOUD&nbsp;PROVIDERS</div>
+        <div class="v"><p>Anthropic, OpenAI, or Google Gemini. Your device sends the lap summary directly to that provider&rsquo;s own servers, using an API key you supply and manage yourself. That exchange is covered by the provider&rsquo;s own privacy policy and terms, not this one.</p></div>
+      </div>
+      <div class="spec-row">
+        <div class="k">OLLAMA</div>
+        <div class="v"><p>Runs against a language model on your own computer or local network. Nothing leaves your local network.</p></div>
+      </div>
+      <div class="spec-row">
+        <div class="k">APPLE&nbsp;INTELLIGENCE</div>
+        <div class="v"><p>Processed entirely on-device using Apple&rsquo;s on-device model. No network request is made at all.</p></div>
+      </div>
+    </div>
+    <p>AI coaching is off unless you turn it on, and you can turn it back off at any time in Settings.</p>
+  </section>
+
+  <section id="keys">
+    <h2><span class="num">04</span> API keys and credentials</h2>
+    <p>Any API key you enter for a cloud coaching provider is stored in your device&rsquo;s Keychain, the same secure storage macOS and iOS use for passwords. It&rsquo;s used only to authenticate your own requests to that provider and is never sent anywhere else, including to the developer of this app.</p>
+  </section>
+
+  <section id="prefs">
+    <h2><span class="num">05</span> App preferences and local storage</h2>
+    <p>Settings like your chosen units, language, coaching provider, and recently used track/session files are stored locally on your device so the app remembers them between launches. None of this is synced to a server or shared with anyone.</p>
+  </section>
+
+  <section id="not">
+    <h2><span class="num">06</span> What this app doesn&rsquo;t do</h2>
+    <ul class="plain">
+      <li>No accounts, sign-in, or user profiles.</li>
+      <li>No analytics, crash reporting, or advertising SDKs.</li>
+      <li>No access to your device&rsquo;s live location &mdash; GPS coordinates only ever come from telemetry files you choose to open.</li>
+      <li>No selling or sharing of data for advertising or marketing purposes.</li>
+    </ul>
+  </section>
+
+  <section id="third-party">
+    <h2><span class="num">07</span> Third-party services</h2>
+    <p>If you use a cloud AI coaching provider, review that provider&rsquo;s own privacy policy to understand how they handle the data you send them:</p>
+    <ul class="plain">
+      <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic Privacy Policy</a></li>
+      <li><a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+    </ul>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">08</span> Children&rsquo;s privacy</h2>
+    <p>PDR Viewer isn&rsquo;t directed at children and doesn&rsquo;t knowingly collect information from anyone under 13.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">09</span> Changes to this policy</h2>
+    <p>If this policy changes, the effective date above will be updated. Meaningful changes will be reflected here before they take effect.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">10</span> Contact</h2>
+    <p>Questions about this policy or how PDR Viewer handles data can be sent to <a href="mailto:computerguy989@gmail.com">computerguy989@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <span>PDR Viewer &mdash; Privacy Policy</span>
+    <span>Effective 2026-08-17</span>
+  </footer>
+
+</div>
+</body>
+</html>

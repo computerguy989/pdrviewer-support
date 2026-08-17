@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDR Viewer Support</title>
+<style>
+  :root {
+    --bg: #eef1f0;
+    --surface: #e3e8e6;
+    --ink: #1b1f22;
+    --ink-muted: #565f5c;
+    --accent: #b8571f;
+    --accent-2: #8a4116;
+    --line: #c9d0cd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171a;
+      --surface: #1b1f22;
+      --ink: #edf1ee;
+      --ink-muted: #9aa39e;
+      --accent: #e08a4a;
+      --accent-2: #f0a565;
+      --line: #2c3235;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 44rem; margin: 0 auto; padding: 4.5rem 1.5rem 6rem; }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1, h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700; text-wrap: balance;
+  }
+  h1 { font-size: 2.1rem; letter-spacing: -0.01em; margin: 0.4rem 0 0; }
+  h2 { font-size: 1.15rem; margin: 0 0 0.75rem; }
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .plate {
+    border: 1px solid var(--line); background: var(--surface);
+    border-radius: 4px; padding: 1.5rem 1.75rem; margin-top: 1.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem;
+  }
+  .rule {
+    height: 2px; border: none; margin: 2.5rem 0;
+    background: linear-gradient(90deg, var(--accent), transparent 55%);
+  }
+  section { margin: 2.5rem 0; }
+  ul { margin: 0.75rem 0 1rem; padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem; color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">Support</div>
+  <h1>PDR Viewer</h1>
+
+  <div class="plate">
+    <p style="margin:0;">A Mac and iPad app for reviewing GM Performance Data Recorder telemetry from track days &mdash; lap comparison, video sync, corner-by-corner analysis, and vehicle stats.</p>
+  </div>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Get help</h2>
+    <p>Questions, bug reports, and feature requests: <a href="mailto:computerguy989@gmail.com">computerguy989@gmail.com</a></p>
+    <p>The app can generate a diagnostic report for you &mdash; open <strong>Report a Bug</strong> from the toolbar, describe what happened, tap <strong>Generate report</strong>, then attach the resulting files to your email. That report includes your app and OS version plus the current session state, which makes most problems far quicker to track down.</p>
+  </section>
+
+  <section>
+    <h2>Common questions</h2>
+    <p><strong>Which files does it read?</strong> Video files recorded by a vehicle's Performance Data Recorder, which carry telemetry alongside the video, plus GPX track maps. It reads only the telemetry portion of a recording, so opening a session over a network share doesn't pull the whole video across.</p>
+    <p><strong>A file shows a warning icon.</strong> Tap the icon for the specific reason. The most common cause is a copy that was interrupted partway &mdash; recopy it from the source card rather than trusting the partial copy.</p>
+    <p><strong>Does AI coaching send my data anywhere?</strong> Only if you turn it on and choose a cloud provider, and then only a small summary of derived numbers &mdash; never your video or GPS coordinates. On-device options send nothing at all. See the <a href="privacy.html">privacy policy</a> for specifics.</p>
+  </section>
+
+  <section>
+    <h2>Legal</h2>
+    <ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms &amp; Disclaimer</a></li>
+    </ul>
+    <p>PDR Viewer is an independent app and is not affiliated with, endorsed by, or sponsored by any vehicle manufacturer.</p>
+  </section>
+
+  <footer>PDR Viewer &mdash; Support</footer>
+
+</div>
+</body>
+</html>

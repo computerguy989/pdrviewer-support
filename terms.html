@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDR Viewer Terms &amp; Disclaimer</title>
+<style>
+  :root {
+    --bg: #eef1f0;
+    --surface: #e3e8e6;
+    --surface-2: #dbe1de;
+    --ink: #1b1f22;
+    --ink-muted: #565f5c;
+    --accent: #b8571f;
+    --accent-2: #8a4116;
+    --line: #c9d0cd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171a;
+      --surface: #1b1f22;
+      --surface-2: #21262a;
+      --ink: #edf1ee;
+      --ink-muted: #9aa39e;
+      --accent: #e08a4a;
+      --accent-2: #f0a565;
+      --line: #2c3235;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171a;
+    --surface: #1b1f22;
+    --surface-2: #21262a;
+    --ink: #edf1ee;
+    --ink-muted: #9aa39e;
+    --accent: #e08a4a;
+    --accent-2: #f0a565;
+    --line: #2c3235;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1, h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  h1 { font-size: 2.1rem; letter-spacing: -0.01em; margin: 0.4rem 0 0; }
+  h2 {
+    font-size: 1.15rem;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  h2 .num {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  p { margin: 0 0 1rem; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+  .muted { color: var(--ink-muted); }
+  a { color: var(--accent-2); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .plate {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 1.75rem;
+  }
+  .plate-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .plate-item .label {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block;
+  }
+  .plate-item .value {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-top: 0.15rem;
+  }
+
+  .rule {
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent 55%);
+    margin: 2.5rem 0;
+    border: none;
+  }
+
+  .toc {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .toc li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 0.95rem;
+  }
+  .toc .num {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--accent);
+    font-size: 0.8rem;
+    min-width: 1.4rem;
+  }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--accent-2); }
+
+  section { margin: 2.5rem 0; scroll-margin-top: 1.5rem; }
+
+  .callout {
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: var(--surface);
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+  .callout p { margin: 0; }
+  .callout .tag {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  ul.plain { margin: 0.75rem 0 1rem; padding-left: 1.2rem; }
+  ul.plain li { margin-bottom: 0.4rem; }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 30rem) { h1 { font-size: 1.7rem; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="eyebrow">Terms &amp; Disclaimer</div>
+  <h1>PDR Viewer</h1>
+
+  <div class="plate">
+    <p class="muted" style="margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-size: 0.95rem;">
+      These terms cover your use of PDR Viewer, including the optional AI Coaching feature. Read this alongside the <a href="privacy.html">Privacy Policy</a>, which covers how data is handled.
+    </p>
+    <div class="plate-row">
+      <div class="plate-item">
+        <span class="label">Effective</span>
+        <span class="value">2026-08-17</span>
+      </div>
+      <div class="plate-item">
+        <span class="label">Applies to</span>
+        <span class="value">PDR Viewer &mdash; macOS &amp; iPadOS</span>
+      </div>
+      <div class="plate-item">
+        <span class="label">Contact</span>
+        <span class="value"><a href="mailto:computerguy989@gmail.com">computerguy989@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <ol class="toc">
+    <li><span class="num">01</span><a href="#acceptance">Acceptance of these terms</a></li>
+    <li><span class="num">02</span><a href="#coaching">AI Coaching disclaimer</a></li>
+    <li><span class="num">03</span><a href="#risk">Assumption of risk</a></li>
+    <li><span class="num">04</span><a href="#warranty">No warranty</a></li>
+    <li><span class="num">05</span><a href="#liability">Limitation of liability</a></li>
+    <li><span class="num">06</span><a href="#indemnity">Indemnification</a></li>
+    <li><span class="num">07</span><a href="#changes">Changes to these terms</a></li>
+    <li><span class="num">08</span><a href="#contact">Contact</a></li>
+  </ol>
+
+  <section id="acceptance">
+    <h2><span class="num">01</span> Acceptance of these terms</h2>
+    <p>By downloading, installing, or using PDR Viewer, you agree to these terms. If you don&rsquo;t agree, don&rsquo;t use the app.</p>
+  </section>
+
+  <section id="coaching">
+    <h2><span class="num">02</span> AI Coaching disclaimer</h2>
+    <p>PDR Viewer includes an optional feature that generates automated driving-coaching suggestions from your recorded lap data, using an AI provider you choose.</p>
+    <div class="callout">
+      <span class="tag">This is not instruction</span>
+      <p>AI Coaching output is generated automatically and can be incomplete, inaccurate, or simply wrong. It is not professional driving or racing instruction, and it is not a substitute for a qualified instructor, coach, or your own judgment. You are solely responsible for deciding whether, and how, to act on anything it suggests.</p>
+    </div>
+  </section>
+
+  <section id="risk">
+    <h2><span class="num">03</span> Assumption of risk</h2>
+    <p>Operating a vehicle, and driving on a track in particular, carries an inherent risk of injury, death, or damage to your vehicle or property &mdash; a risk that exists regardless of anything this app tells you. By using PDR Viewer, including AI Coaching, you acknowledge and accept that risk and agree that you, not the developer, are responsible for your own driving decisions, your vehicle, and your safety and the safety of others.</p>
+  </section>
+
+  <section id="warranty">
+    <h2><span class="num">04</span> No warranty</h2>
+    <p>PDR Viewer is provided &ldquo;as is,&rdquo; without warranty of any kind, express or implied, including any warranty that it will be accurate, reliable, uninterrupted, or fit for a particular purpose.</p>
+  </section>
+
+  <section id="liability">
+    <h2><span class="num">05</span> Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, the developer of PDR Viewer is not liable for any injury, death, or damage to a person, vehicle, or other property, or for any other loss, arising from or related to your use of the app or any suggestion it generates, including through AI Coaching.</p>
+  </section>
+
+  <section id="indemnity">
+    <h2><span class="num">06</span> Indemnification</h2>
+    <p>You agree to hold the developer harmless from any claim arising from your use of the app or your own driving or vehicle-operation decisions, including any made in reliance on AI Coaching output.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">07</span> Changes to these terms</h2>
+    <p>If these terms change, the effective date above will be updated. Continuing to use the app after a change means you accept the updated terms.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">08</span> Contact</h2>
+    <p>Questions about these terms can be sent to <a href="mailto:computerguy989@gmail.com">computerguy989@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <span>PDR Viewer &mdash; Terms &amp; Disclaimer</span>
+    <span>Effective 2026-08-17</span>
+  </footer>
+
+</div>
+</body>
+</html>
