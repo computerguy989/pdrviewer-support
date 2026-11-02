@@ -225,7 +225,7 @@
     <div class="plate-row">
       <div class="plate-item">
         <span class="label">Effective</span>
-        <span class="value">2026-08-17</span>
+        <span class="value">2026-10-31</span>
       </div>
       <div class="plate-item">
         <span class="label">Applies to</span>
@@ -257,7 +257,7 @@
   <section id="overview">
     <h2><span class="num">01</span> Overview</h2>
     <p>PDR Viewer is built to run entirely on your own device. It doesn&rsquo;t have a server, doesn&rsquo;t ask you to create an account, and doesn&rsquo;t collect analytics, usage statistics, advertising identifiers, or crash reports of any kind. Almost everything the app does &mdash; decoding telemetry, building lap comparisons, syncing video, computing stats &mdash; happens locally on your Mac or iPad and never leaves it.</p>
-    <p>The one feature that can send data off your device is the optional AI coaching summary, and even that only runs if you turn it on and provide your own API key. The sections below explain exactly what that involves.</p>
+    <p>The one feature that can send data off your device is the optional AI coaching summary, and even that only runs when you ask for it, after you&rsquo;ve given permission for the provider you chose. The sections below explain exactly what that involves.</p>
   </section>
 
   <section id="files">
@@ -268,7 +268,7 @@
 
   <section id="coaching">
     <h2><span class="num">03</span> The optional AI coaching feature</h2>
-    <p>If you turn on AI coaching, PDR Viewer sends a compact, derived summary of your lap analysis &mdash; lap times, corner names, speeds, and similar performance numbers &mdash; to a provider you choose, so it can write a short coaching narrative back. This summary never includes raw video, GPS coordinates, or file names. Where that summary goes depends on which provider you pick:</p>
+    <p>When you ask for an AI coaching summary, PDR Viewer sends a compact, derived summary of your lap analysis &mdash; lap times, corner names, speeds, and similar performance numbers &mdash; to a provider you choose, so it can write a short coaching narrative back. Sessions are relabelled S1, S2, and so on, and calendar dates are replaced with relative day numbers (&ldquo;day 2, +14 days&rdquo;), so the summary never includes raw video, GPS coordinates, file or folder names, or dates. The app maps those labels back to your own session names on your device when the narrative comes back. Where that summary goes depends on which provider you pick:</p>
     <div class="spec">
       <div class="spec-row">
         <div class="k">CLOUD&nbsp;PROVIDERS</div>
@@ -283,7 +283,7 @@
         <div class="v"><p>Processed entirely on-device using Apple&rsquo;s on-device model. No network request is made at all.</p></div>
       </div>
     </div>
-    <p>AI coaching is off unless you turn it on, and you can turn it back off at any time in Settings.</p>
+    <p>Nothing is sent until you tap Generate. The first time you use a cloud provider, the app asks for your permission to send it your lap summary, and asks again for each different cloud provider. You can withdraw that permission at any time with <strong>Reset AI data-sharing permissions</strong> in Coaching Settings, or switch to Ollama or Apple Intelligence to keep everything on your own devices.</p>
   </section>
 
   <section id="keys">
@@ -342,7 +342,7 @@
 
   <footer>
     <span>PDR Viewer &mdash; Privacy Policy</span>
-    <span>Effective 2026-08-17</span>
+    <span>Effective 2026-10-31</span>
   </footer>
 
 </div>
